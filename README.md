@@ -135,13 +135,13 @@ The application also displays additional suitable crops ranked according to thei
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/YOUR-USERNAME/YOUR-REPOSITORY-NAME.git
+git clone https://github.com/adithyak0604/AgriSense-Crop-Recommendation.git
 ```
 
 ### 2. Navigate to the Project Directory
 
 ```bash
-cd YOUR-REPOSITORY-NAME
+cd AgriSense-Crop-Recommendation
 ```
 
 ### 3. Create a Virtual Environment
