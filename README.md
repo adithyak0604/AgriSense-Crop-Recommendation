@@ -329,15 +329,9 @@ These files are required for the application to perform crop predictions.
 
 ## 📸 Screenshots
 
-You can add screenshots of the application here.
+### Interface
 
-Example:
-
-```markdown
-![Home Page](screenshots/home.png)
-
-![Recommendation Result](screenshots/result.png)
-```
+![AgriSense-Crop-Recommendation](screenshots/page.png)
 
 ---
 
