@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Crop Recommendation</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+    <nav>
+        <div class="logo">
+            🌱 AgriSense
+        </div>
+
+        <div class="nav-text">
+            AI Crop Recommendation System
+        </div>
+    </nav>
+
+
+    <main>
+
+        <section class="hero">
+
+            <h1>Find the Best Crop for Your Soil 🌾</h1>
+
+            <p>
+                Enter your soil nutrients and environmental conditions.
+                Our AI model will recommend the most suitable crops.
+            </p>
+
+        </section>
+
+
+        <section class="container">
+
+            <!-- INPUT FORM -->
+
+            <div class="card">
+
+                <h2>🌱 Enter Farm Conditions</h2>
+
+                <form id="cropForm">
+
+                    <div class="input-grid">
+
+                        <div class="input-group">
+                            <label>Nitrogen (N)</label>
+                            <input type="number" id="n" required step="any">
+                        </div>
+
+                        <div class="input-group">
+                            <label>Phosphorus (P)</label>
+                            <input type="number" id="p" required step="any">
+                        </div>
+
+                        <div class="input-group">
+                            <label>Potassium (K)</label>
+                            <input type="number" id="k" required step="any">
+                        </div>
+
+                        <div class="input-group">
+                            <label>Temperature (°C)</label>
+                            <input type="number" id="temperature" required step="any">
+                        </div>
+
+                        <div class="input-group">
+                            <label>Humidity (%)</label>
+                            <input type="number" id="humidity" required step="any">
+                        </div>
+
+                        <div class="input-group">
+                            <label>Soil pH</label>
+                            <input type="number" id="ph" required step="any">
+                        </div>
+
+                        <div class="input-group">
+                            <label>Rainfall (mm)</label>
+                            <input type="number" id="rainfall" required step="any">
+                        </div>
+
+                        <div class="input-group">
+
+                            <label>Season</label>
+
+                            <select id="season" required>
+                                <option value="">Select Season</option>
+                                <option value="autumn">Autumn</option>
+                                <option value="rainy">Rainy</option>
+                                <option value="spring">Spring</option>
+                                <option value="summer">Summer</option>
+                                <option value="winter">Winter</option>
+                                <option value="zaid">Zaid</option>
+                            </select>
+
+                        </div>
+
+                    </div>
+
+
+                    <button type="submit" id="predictBtn">
+                        🔍 Recommend Crop
+                    </button>
+
+                </form>
+
+            </div>
+
+
+            <!-- LOADING -->
+
+            <div id="loading" class="loading hidden">
+
+                <div class="spinner"></div>
+
+                <p>Analyzing soil and climate conditions...</p>
+
+            </div>
+
+
+            <!-- ERROR -->
+
+            <div id="errorBox" class="error hidden"></div>
+
+
+            <!-- RESULTS -->
+
+            <section id="results" class="hidden">
+
+                <!-- BEST RECOMMENDATION -->
+
+                <div class="best-card">
+
+                    <span class="badge">BEST RECOMMENDATION</span>
+
+                    <h2 id="topCrop">Crop</h2>
+
+                    <p class="latin" id="latinName">
+                        Scientific Name
+                    </p>
+
+                    <div class="confidence">
+
+                        <span id="confidence">0%</span>
+
+                        <p>Model Confidence</p>
+
+                    </div>
+
+                    <div class="reason">
+
+                        <h3>Why this crop?</h3>
+
+                        <p id="reasonText"></p>
+
+                    </div>
+
+
+                    <div class="tips">
+
+                        <h3>🌿 Growing Tips</h3>
+
+                        <ul id="tipsList"></ul>
+
+                    </div>
+
+                </div>
+
+
+                <!-- OTHER RECOMMENDATIONS -->
+
+                <div class="recommendations">
+
+                    <h2>Other Suitable Crops</h2>
+
+                    <div id="recommendationList">
+
+                    </div>
+
+                </div>
+
+            </section>
+
+        </section>
+
+    </main>
+
+
+    <footer>
+
+        <p>
+            🌱 AgriSense
+        </p>
+
+    </footer>
+
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+
+</body>
+
+</html>
